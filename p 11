@@ -1,0 +1,57 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+	cout << "[ + ] Программа - “Геометрические фигуры”" << endl;
+	cout << endl;
+	cout << "[1] Линия" << endl;
+	cout << endl;
+
+	cout << "горизонтальную" << endl;
+	cout << endl;
+	cout << "вертикальную" << endl;
+
+	int g; cin >> g;
+	if (g == 1) {
+		
+
+			cout << "введите длинну линии: " << endl;
+			int b;
+			int n = 0;
+			cin >> b;
+			while (n < b) {
+				cout << "# ";
+
+				n++;
+			}
+	}
+	
+	if (g == 2) {
+		cout << "введите длинну линии: " << endl;
+		int t = 0;
+		int v;
+		cin >> v;
+		while (t < v) {
+			cout << "#" << endl;
+			cout << endl;
+
+			t++;
+		}
+	}
+
+
+
+
+
+
+
+	int a; cin >> a;
+
+
+
+}
