@@ -1,0 +1,346 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    int menu;
+    int menu1;
+    int menu2;
+    int menu3;
+    int menu4;
+    int dl;
+    int raz;
+    int shir;
+    int vis;
+    char sim;
+
+
+    while (true) {
+        cout << "Программа 'Геометрические фигуры'\n";
+        cout << "[1] Линия\n";
+        cout << "[2] Квадрат\n";
+        cout << "[3] Прямоугольник\n";
+        cout << "[4] Треугольник\n";
+        cout << "[5] Решетка\n";
+        cout << "[6] Крестик\n";
+        cout << "[0] Выход\n";
+        cout << "Выберите фигуру: ";
+        cin >> menu;
+
+        switch (menu) {
+        case 0:
+            cout << "Выход из программы...\n";
+            return 0;
+
+        case 6:
+            system("cls");
+            cout << "Фигура 'Крестик'\n\n";
+            cout << "Размер(Размер должен быть четным!): ";
+            cin >> raz;
+            cout << "Символ: ";
+            cin >> sim;
+
+            system("cls");
+            for (int y = 1; y < raz; y++) {
+                for (int x = 1; x < raz; x++) {
+                    if (x == y || x == raz - y) {
+                        cout << sim <<" ";
+                    }
+                    else {
+                        cout << ". ";
+                    }
+                }
+                cout << endl;
+            }
+            break;
+        case 5:
+            system("cls");
+            cout << "Фигура 'Решетка'\n\n";
+            cout << "Размер(Размер должен быть нечетным!): ";
+            cin >> raz;
+            cout << "Символ: ";
+            cin >> sim;
+
+            system("cls");
+            for (int i = 1; i < raz + 1; i++) {
+                for (int b = 1; b < raz + 1; b++) {
+                    if (b % 2 == 0 or i % 2 == 0) {
+                        cout << " " << sim;
+                    }
+                    else {
+                        cout << " .";
+                    }
+                }
+                cout << endl;
+            }
+
+
+            if (raz <= 0) {
+                cout << "Нельзя брать такие размеры\n";
+                system("pause");
+                break;
+            }
+
+            break;
+        case 4:
+            system("cls");
+            cout << "Фигура 'Треугольник'\n\n";
+            cout << "[1] Заполненый\n";
+            cout << "[2] Пустой\n\n";
+            cout << "Выберите тип: ";
+            cin >> menu4;
+
+            switch (menu4) {
+            case 1:
+                system("cls");
+                cout << "Размер: ";
+                cin >> raz;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (raz <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 1; i <= raz; i++) {
+                    for (int j = raz - i; j > 0; j--) {
+                        cout << " ";
+                    }
+                    for (int k = 1; k <= 2 * i - 1; k++) {
+                        cout << sim;
+                    }
+                    cout << endl;
+                }
+                break;
+            case 2:
+                system("cls");
+                cout << "Размер: ";
+                cin >> raz;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (raz <= 0) {
+                    cout << "Нельзя брать минусовые размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                for (int i = 1; i <= raz; i++) {
+                    for (int j = raz - i; j > 0; j--) {
+                        cout << " ";
+                    }
+                    for (int k = 1; k <= 2 * i - 1; k++) {
+                        if (i == raz || k == 1 || k == 2 * i - 1) {
+                            cout << sim;
+                        }
+                        else {
+                            cout << " ";
+                        }
+                    }
+                    cout << endl;
+                }
+                break;
+            default:
+                cout << "Такого пункта нет в меню\n\n";
+            }
+            break;
+        case 1:
+            system("cls");
+            cout << "Фигура 'Линия'\n\n";
+            cout << "[1] Горизонтальная\n";
+            cout << "[2] Вертикальная\n\n";
+            cout << "Выберите тип: ";
+            cin >> menu1;
+
+            switch (menu1) {
+            case 1:
+                system("cls");
+                cout << "Длина линии: ";
+                cin >> dl;
+                cout << "Символ линии: ";
+                cin >> sim;
+
+                if (dl <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 0; i < dl; i++) {
+                    cout << sim;
+                }
+                cout << endl;
+                break;
+            case 2:
+                system("cls");
+                cout << "Длина: ";
+                cin >> dl;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (dl <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 0; i < dl; i++) {
+                    cout << sim << endl;
+                }
+                break;
+            default:
+                cout << "Такого пункта нет в меню\n\n";
+            }
+            break;
+
+        case 2:
+            system("cls");
+            cout << "Фигура 'Квадрат'\n\n";
+            cout << "[1] Заполненный\n";
+            cout << "[2] Пустой\n\n";
+            cout << "Выберите тип: ";
+            cin >> menu2;
+
+            switch (menu2) {
+            case 1:
+                system("cls");
+                cout << "Размер: ";
+                cin >> raz;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (raz <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 0; i < raz; i++) {
+                    for (int j = 0; j < raz; j++) {
+                        cout << sim << " ";
+                    }
+                    cout << endl;
+                }
+                break;
+
+            case 2:
+                system("cls");
+                cout << "Размер: ";
+                cin >> raz;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (raz <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 0; i < raz; i++) {
+                    for (int j = 0; j < raz; j++) {
+                        if (i == 0 || i == raz - 1 || j == 0 || j == raz - 1) {
+                            cout << sim << " ";
+                        }
+                        else {
+                            cout << "  ";
+                        }
+                    }
+                    cout << endl;
+                }
+                break;
+
+            default:
+                cout << "Такого пункта нет в меню\n\n";
+            }
+            break;
+
+        case 3:
+            system("cls");
+            cout << "Фигура 'Прямоугольник'\n\n";
+            cout << "[1] Заполненный\n";
+            cout << "[2] Пустой\n\n";
+            cout << "Выберите тип: ";
+            cin >> menu3;
+
+            switch (menu3) {
+            case 1:
+                system("cls");
+                cout << "Ширина: ";
+                cin >> shir;
+                cout << "Высота: ";
+                cin >> vis;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (shir <= 0 or vis <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 0; i < vis; i++) {
+                    for (int j = 0; j < shir; j++) {
+                        cout << sim << " ";
+                    }
+                    cout << endl;
+                }
+                break;
+            case 2:
+                system("cls");
+                cout << "Ширина: ";
+                cin >> shir;
+                cout << "Высота: ";
+                cin >> vis;
+                cout << "Символ: ";
+                cin >> sim;
+
+                if (shir <= 0 or vis <= 0) {
+                    cout << "Нельзя брать такие размеры\n";
+                    system("pause");
+                    break;
+                }
+
+                system("cls");
+                for (int i = 0; i < vis; i++) {
+                    for (int j = 0; j < shir; j++) {
+                        if (i == 0 || i == vis - 1 || j == 0 || j == shir - 1) {
+                            cout << sim
+                                << " ";
+                        }
+                        else {
+                            cout << "  ";
+                        }
+                    }
+                    cout << endl;
+                }
+                break;
+            default:
+                cout << "Такого пункта нет в меню\n\n";
+                break;
+            }
+
+
+
+
+            break;
+        default:
+            cout << "Такого пункта нет в меню\n\n";
+        }
+
+        cout << "\nДля продолжения нажмите Enter...";
+        cin.ignore();
+        cin.get();
+        system("cls");
+    }
+    return 0;
+}
