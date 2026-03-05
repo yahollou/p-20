@@ -1,0 +1,36 @@
+
+#include <iostream>;
+
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	int choice;
+
+	cout << "\n 1 лето";
+	cout << "\n 2 осень";
+	cout << "\n 3 зима";
+	cout << "\n 4 весна";
+	
+	cout << "\n введите значение";
+
+	cin >> choice;
+	if (choice == 1){ 
+
+		cout << "\n на улице жарко" << endl; 
+	}
+	
+
+	else if (choice == 2) {
+
+		cout << "\n возьми зонт" << endl;
+	}
+	else if (choice == 3) {
+
+		cout << "\n оденься потеплее" << endl;
+	}
+	else if (choice == 4) {
+
+		cout << "\n qeqwedasdfsdsf" << endl;
+	}
+}
