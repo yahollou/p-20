@@ -1,0 +1,352 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    int menu;
+    int settings;
+    int rule;
+    string name;
+    int quesion = 8;
+    string color_green = "\x1b[92m";
+    string color_red = "\x1b[91m";
+    string color_blue = "\x1b[94m";
+    string color_yellow = "\x1b[93m";
+    string color_def = "\x1b[0m";
+
+    string current_color = color_def;
+
+    cout << "------Викторина------" << endl;
+    cout << "Введи свое имя!" << endl;
+    cin >> name;
+
+    while (true) {
+        system("cls");
+        cout << current_color << "------Меню------" << color_def << endl << endl;
+        cout << current_color << "[1]Начать игру" << color_def << endl;
+        cout << current_color << "[2]Настройки" << color_def << endl;
+        cout << current_color << "[3]Правила" << color_def << endl;
+        cout << current_color << "[4]Выйти" << color_def << endl;
+        cout << "Введи число: ";
+        cin >> menu;
+
+        if (menu == 1) {
+            system("cls");
+            int lives = 3;
+            int score = 0;
+            int current_question = 1;
+            char answer;
+            cout << current_color << "------Начинаем игру------" << color_def << endl;
+
+            while (lives > 0 && current_question <= quesion) {
+                system("cls");
+                cout << current_color << "[+] Игрок: " << name << " | жизни: " << lives << " | очки: " << score << color_def << endl;
+                cout << current_color << "[ " << current_question << " ] " << color_def;
+
+                if (current_question == 1) {
+                    cout << "Вопрос: Системный язык программирования?" << endl;
+                    cout << "[ A ] Python\t[ B ] C#" << endl;
+                    cout << "[ C ] Ruby\t[ D ] C++" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'D' || answer == 'd') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 2) {
+                    cout << "Вопрос: Что такое HTML?" << endl;
+                    cout << "[ A ] Язык программирования\t[ B ] База данных" << endl;
+                    cout << "[ C ] Язык разметки\t\t[ D ] Операционная система" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'C' || answer == 'c') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 3) {
+                    cout << "Вопрос: Какой язык используется для стилизации веб-страниц?" << endl;
+                    cout << "[ A ] JavaScript\t[ B ] CSS" << endl;
+                    cout << "[ C ] HTML\t\t[ D ] PHP" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'B' || answer == 'b') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 4) {
+                    cout << "Вопрос: Что означает ООП?" << endl;
+                    cout << "[ A ] Объектно-Ориентированное Программирование" << endl;
+                    cout << "[ B ] Объектно-Открытый Протокол" << endl;
+                    cout << "[ C ] Основные Операционные Процедуры" << endl;
+                    cout << "[ D ] Организация Общих Процессов" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'A' || answer == 'a') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 5) {
+                    cout << "Вопрос: Какой тип данных используется для хранения целых чисел?" << endl;
+                    cout << "[ A ] float\t[ B ] string" << endl;
+                    cout << "[ C ] bool\t[ D ] int" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'D' || answer == 'd') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 6) {
+                    cout << "Вопрос: Что такое Git?" << endl;
+                    cout << "[ A ] Язык программирования\t[ B ] Операционная система" << endl;
+                    cout << "[ C ] Система контроля версий\t[ D ] Текстовый редактор" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'C' || answer == 'c') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 7) {
+                    cout << "Вопрос: Какой оператор используется для сравнения на равенство в C++?" << endl;
+                    cout << "[ A ] =\t\t[ B ] ==" << endl;
+                    cout << "[ C ] !=\t[ D ] >=" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'B' || answer == 'b') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 8) {
+                    cout << "Вопрос: Что такое API?" << endl;
+                    cout << "[ A ] Автоматическая Программная Интеграция" << endl;
+                    cout << "[ B ] Интерфейс Программирования Приложений" << endl;
+                    cout << "[ C ] Автономный Процессорный Интерфейс" << endl;
+                    cout << "[ D ] Адаптивный Протокол Интернета" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'B' || answer == 'b') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 9) {
+                    cout << "Вопрос: Какой язык используется для создания интерактивных веб-страниц?" << endl;
+                    cout << "[ A ] CSS\t[ B ] HTML" << endl;
+                    cout << "[ C ] JavaScript\t[ D ] SQL" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'C' || answer == 'c') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 10) {
+                    cout << "Вопрос: Что такое база данных?" << endl;
+                    cout << "[ A ] Программа для создания графики" << endl;
+                    cout << "[ B ] Организованная коллекция данных" << endl;
+                    cout << "[ C ] Язык программирования" << endl;
+                    cout << "[ D ] Операционная система" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'B' || answer == 'b') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 11) {
+                    cout << "Вопрос: Какой протокол используется для передачи веб-страниц?" << endl;
+                    cout << "[ A ] FTP\t[ B ] SMTP" << endl;
+                    cout << "[ C ] HTTP\t[ D ] TCP" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'C' || answer == 'c') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+                else if (current_question == 12) {
+                    cout << "Вопрос: Что такое компилятор?" << endl;
+                    cout << "[ A ] Программа, переводящая код в машинный язык" << endl;
+                    cout << "[ B ] Текстовый редактор" << endl;
+                    cout << "[ C ] База данных" << endl;
+                    cout << "[ D ] Графический редактор" << endl;
+                    cout << "[+] Выбрать ответ: ";
+                    cin >> answer;
+                    if (answer == 'A' || answer == 'a') {
+                        cout << color_green << "Правильно! +10 очков" << color_def << endl;
+                        score += 10;
+                    }
+                    else {
+                        cout << color_red << "Неправильно! -1 жизнь" << color_def << endl;
+                        lives--;
+                    }
+                }
+
+                current_question++;
+                system("pause");
+            }
+
+
+            system("cls");
+            if (lives > 0) {
+                cout << color_green << "ПОБЕДА! Вы прошли все вопросы!" << color_def << endl;
+            }
+            else {
+                cout << color_red << "ИГРА ОКОНЧЕНА! Закончились жизни!" << color_def << endl;
+            }
+            cout << "Ваш счет: " << score << " очков" << endl;
+            system("pause");
+        }
+        else if (menu == 2) {
+            while (true) {
+                system("cls");
+                cout << current_color << "------Настройки------" << color_def << endl;
+                cout << current_color << "[1]Редактирование имя игрока" << color_def << endl;
+                cout << current_color << "[2]Редактирование вопросов в игре. Можно изменить на 8-10-12" << color_def << endl;
+                cout << current_color << "[3]Сменить цвет" << color_def << endl;
+                cout << current_color << "[4]Выход" << color_def << endl;
+                cout << "Введи число: ";
+                cin >> settings;
+
+                if (settings == 1) {
+                    cout << "Можете изменить имя: ";
+                    cin >> name;
+                    cout << current_color << "Имя изменено на: " << name << color_def << endl;
+                    system("pause");
+                }
+                else if (settings == 2) {
+                    while (true) {
+                        system("cls");
+                        cout << current_color << "Можно ввести вопросы в диапазоне от 8 до 12" << color_def << endl;
+                        cout << "Введите кол-во вопросов: ";
+                        cin >> quesion;
+                        if (quesion == 8 || quesion == 10 || quesion == 12) {
+                            cout << current_color << "Количество вопросов установлено: " << quesion << color_def << endl;
+                            break;
+                        }
+                        else {
+                            cout << color_red << "Ошибка! Можно ввести только 8, 10 или 12!" << color_def << endl;
+                        }
+                        system("pause");
+                    }
+                    system("pause");
+                }
+                else if (settings == 3) {
+                    int color_user;
+                    cout << current_color << "------Выберите цвет------" << color_def << endl;
+                    cout << current_color << "[1]Дефолтный цвет" << color_def << endl;
+                    cout << color_red << "[2]Красный цвет" << color_def << endl;
+                    cout << color_green << "[3]Зеленый цвет" << color_def << endl;
+                    cout << color_blue << "[4]Синий цвет" << color_def << endl;
+                    cout << color_yellow << "[5]Желтый цвет" << color_def << endl;
+                    cout << "Введи число: ";
+                    cin >> color_user;
+
+                    if (color_user == 1) {
+                        current_color = color_def;
+                        cout << "Цвет изменен на дефолтный!" << endl;
+                    }
+                    else if (color_user == 2) {
+                        current_color = color_red;
+                        cout << color_red << "Цвет изменен на красный!" << color_def << endl;
+                    }
+                    else if (color_user == 3) {
+                        current_color = color_green;
+                        cout << color_green << "Цвет изменен на зеленый!" << color_def << endl;
+                    }
+                    else if (color_user == 4) {
+                        current_color = color_blue;
+                        cout << color_blue << "Цвет изменен на синий!" << color_def << endl;
+                    }
+                    else if (color_user == 5) {
+                        current_color = color_yellow;
+                        cout << color_yellow << "Цвет изменен на желтый!" << color_def << endl;
+                    }
+                    else {
+                        cout << color_red << "Неверный выбор цвета!" << color_def << endl;
+                    }
+                    system("pause");
+                }
+                else if (settings == 4) {
+                    break;
+                }
+                else {
+                    cout << color_red << "Неверный пункт меню!" << color_def << endl;
+                    system("pause");
+                }
+            }
+        }
+        else if (menu == 3) {
+            system("cls");
+            cout << current_color << "------Правила------" << color_def << endl;
+            cout << current_color << "- Игрок получает очки за правильный ответ на вопрос" << color_def << endl;
+            cout << current_color << "- Игрок проходит дальше за правильный ответ" << color_def << endl;
+            cout << current_color << "- Игрок теряет жизнь при неправильном ответе" << color_def << endl;
+            cout << current_color << "[1]Выход в меню" << color_def << endl;
+            cin >> rule;
+        }
+        else if (menu == 4) {
+            system("cls");
+            cout << current_color << "Производим выход" << color_def << endl;
+            return 0;
+        }
+        else {
+            system("cls");
+            cout << color_red << "Нет такой команды" << color_def << endl;
+            system("pause");
+        }
+    }
+    return 0;
+}
