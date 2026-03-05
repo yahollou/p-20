@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	int num;
+	cout << "введите число до 15\n";
+	cin >> num;
+	if (num < 1) num = 1;
+	if (num > 15) num = 15;
+	int count = 1;
+
+	while (count <= num) {
+		cout << "номер  " << count << endl;
+		count++;
+		
+
+	}
+	return 0;
+
+}
