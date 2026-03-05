@@ -1,0 +1,83 @@
+
+#include <iostream>
+#include <random>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    int choice;
+    cout << "Чтобы начать игру, нажмите 1" << endl;
+    cout << "Чтобы выйти, нажмите 2" << endl;
+    cin >> choice;
+
+    if (choice == 1) {
+        
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<> dis(1, 10);
+
+        vector<int> secretNumbers;
+        while (secretNumbers.size() < 3) {
+            int num = dis(gen);
+            
+            if (find(secretNumbers.begin(), secretNumbers.end(), num) == secretNumbers.end()) {
+                secretNumbers.push_back(num);
+            }
+        }
+
+        int guessed = 0;
+        int attempts = 5;
+
+        cout << "[+] Угаданных чисел: [0/3]" << endl;
+        cout << "[+] Попыток: [" << attempts << "]" << endl;
+
+        while (attempts > 0 && guessed < 3) {
+            int userGuess;
+            cout << "[>] Угадать число: ";
+            cin >> userGuess;
+
+            bool isGuessed = false;
+            for (int num : secretNumbers) {
+                if (userGuess == num) {
+                    isGuessed = true;
+                    break;
+                }
+            }
+
+            if (isGuessed) {
+                cout << "[+] Вы угадали число!" << endl;
+                guessed++;
+            }
+            else {
+                cout << "[-] Вы не угадали число!" << endl;
+            }
+
+            attempts--;
+            cout << "[+] Угаданных чисел: [" << guessed << "/3]" << endl;
+            cout << "[+] Попыток: [" << attempts << "]" << endl;
+        }
+
+        if (guessed == 3) {
+            cout << "Поздравляем! Вы угадали все числа!" << endl;
+        }
+        else {
+            cout << "Игра окончена. Загаданные числа: ";
+            for (int num : secretNumbers) {
+                cout << num << " ";
+            }
+            cout << endl;
+        }
+    }
+    else if (choice == 2) {
+        return 0;
+    }
+    else {
+        cout << "Вы ввели неверное число или букву" << endl;
+    }
+
+    return 0;
+}
