@@ -1,0 +1,97 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int month;
+
+	int day;
+
+	cout << "[+] календарь" << endl;
+	cout << "[1] январь" << endl;
+	cout << "[2] февраль" << endl;
+	cout << "[3] март" << endl;
+	cout << "[4] апрель" << endl;
+	cout << "[5] май" << endl;
+	cout << "[6] июнь" << endl;
+	cout << "[7] июль" << endl;
+	cout << "[8] август" << endl;
+	cout << "[9] сентябрь" << endl;
+	cout << "[10] октябрь" << endl;
+	cout << "[11] ноябрь" << endl;
+	cout << "[12] декабрь" << endl;
+	cout << endl;
+
+	cout << "выберите месяц: ";
+	cin >> month;
+
+	string monthname;
+
+	switch (month) {
+	case 1: monthname = "январь"; break;
+	case 2: monthname = "февраль"; break;
+	case 3: monthname = "март"; break;
+	case 4: monthname = "апрель"; break;
+	case 5: monthname = "май"; break;
+	case 6: monthname = "июнь"; break;
+	case 7: monthname = "июль"; break;
+	case 8: monthname = "август"; break;
+	case 9: monthname = "сентябрь"; break;
+	case 10: monthname = "октябрь"; break;
+	case 11: monthname = "ноябрь"; break;
+	case 12: monthname = "декабрь"; break;
+	default:
+		cout << "неверный номер месяца" << endl;
+		return 1;
+
+	}
+
+	cout << "выбран месяц - \"" << monthname << "\"" << endl;
+
+	cout << "выберите день месяца: ";
+	cin >> day;
+	cout << "сегоднешнее число ";
+	switch (day) {
+	case 1: day = 1;cout << monthname; cout << " 1"; break;
+	case 2: day == 2; cout << monthname; cout << " 2"; break;
+	case 3: day == 3; cout << monthname; cout << " 3"; break;
+	case 4: day == 4; cout << monthname; cout << " 4"; break;
+	case 5: day == 5; cout << monthname; cout << " 5"; break;
+	case 6: day == 6; cout << monthname; cout << " 6"; break;
+	case 7: day == 7; cout << monthname; cout << " 7"; break;
+	case 8: day == 8; cout << monthname; cout << " 8"; break;
+	case 9: day == 9; cout << monthname; cout << " 9"; break;
+	case 10: day == 10; cout << monthname; cout << " 10"; break;
+	case 11: day == 11; cout << monthname; cout << " 11"; break;
+	case 12: day == 12; cout << monthname; cout << " 12"; break;
+	case 13: day == 13; cout << monthname; cout << " 13"; break;
+	case 14: day == 14; cout << monthname; cout << " 14"; break;
+	case 15: day == 15; cout << monthname; cout << " 15"; break;
+	case 16: day == 16; cout << monthname; cout << " 16"; break;
+	case 17: day == 17; cout << monthname; cout << " 17"; break;
+	case 18: day == 18; cout << monthname; cout << " 18"; break;
+	case 19: day == 19; cout << monthname; cout << " 19"; break;
+	case 20: day == 20; cout << monthname; cout << " 20"; break;
+	case 21: day == 21; cout << monthname; cout << " 21"; break;
+	case 22: day == 21; cout << monthname; cout << " 22"; break;
+	case 23: day == 23; cout << monthname; cout << " 23"; break;
+	case 24: day == 24; cout << monthname; cout << " 24"; break;
+	case 25: day == 25; cout << monthname; cout << " 25"; break;
+	case 26: day == 26; cout << monthname; cout << " 26"; break;
+	case 27: day == 27; cout << monthname; cout << " 27"; break;
+	case 28: day == 28; cout << monthname; cout << " 28"; break;
+	case 29: day == 29; cout << monthname; cout << " 29"; break;
+	case 30: day == 30; cout << monthname; cout << " 30"; break;
+	case 31: day == 31; cout << monthname; cout << " 31"; break;
+
+	default:
+		cout << "вы ввели несуществующий день" << endl;
+		break;
+		
+		return 1;
+	}
+	
+
+
+}
