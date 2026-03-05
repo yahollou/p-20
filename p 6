@@ -1,0 +1,26 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int month;
+		cout << "введите номер месяца: ";
+	cin >> month;
+		switch (month) {
+		case 1: cout << "январь"; break;
+		case 2: cout << "февраль"; break;
+		case 3: cout << "март"; break;
+		case 4: cout << "апрель"; break;
+		case 5: cout << "май"; break;
+		case 6: cout << "июнь"; break;
+		case 7: cout << "июль"; break;
+		case 8: cout << "август"; break;
+		case 9: cout << "сентябрь"; break;
+		case 10: cout << "октябрь"; break;
+		case 11: cout << "ноябрь"; break;
+		case 12: cout << "декабрь"; break;  
+		default:
+			cout << "введите числа от 1 до 12"; break;
+		}
+		
+}
